@@ -1,29 +1,82 @@
-import Taskform from "./component/Taskform"
-import Progresstracker from "./component/Progresstracker"
-import Tasklist from "./component/Tasklist"
-import { useEffect, useState } from "react"
+// import Taskform from "./component/Taskform"
+// import Progresstracker from "./component/Progresstracker"
+// import Tasklist from "./component/Tasklist"
+// import { useEffect, useState } from "react"
 
-export default function App() {
+// export default function App() {
 
-  const [tasks, settasks] = useState([]);
+//   const [tasks, setTasks] = useState([]);
   
-  useEffect(()=> {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  })
+//   useEffect(()=> {
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+//   });
 
-  const addTask = (task) => {
-    settasks([...tasks,task]);
+//   const addTask = (task) => {
+//     setTasks([...tasks,task]);
+//   }
+
+//   const updateTask = (updatedTask, index) => {
+//     const newTask = [...tasks];
+//     newTask[index] = updatedTask;
+//     setTasks(newTask);
+//   }
+
+//   const deleteTask = (index) => {
+//     setTasks(tasks.filter((_,i) => i != index));
+//   }
+
+//   return (
+//     <div>
+//       <h1>Task Buddy</h1>
+//       <p>your friendly task manager</p>
+//       <Taskform addTask={addTask}/>
+//       <Tasklist tasks= {tasks} 
+//       updateTask = {updateTask} 
+//       deleteTask = {deleteTask} />
+//       <Progresstracker/>
+//       <button>clear all task</button>
+//     </div>
+//   )
+// }
+
+import TaskForm from './component/Taskform'
+import TaskList from './component/TaskList'
+import ProgressTracker from './component/ProgressTracker'
+import { useEffect, useState } from 'react';
+export default function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(()=>{
+    localStorage.setItem("tasks",JSON.stringify(tasks))
+  });
+
+  const addTask = (task)=>{
+    setTasks([...tasks, task])
   }
 
+  const updateTask = (updatedTask, index)=>{
+    const newtask = [...tasks];
+    newtask[index] = updatedTask;
+    setTasks(newtask);
+  }
+
+  const deleteTask = (index)=>{
+    setTasks(tasks.filter((_, i) => i !=index))
+   }
+
   return (
-    <div>
-      <h1>Task Buddy</h1>
-      <p>your friendly task manager</p>
-      <Taskform addTask={addTask}/>
-      <Tasklist tasks= {tasks} updateTask = {updateTask} 
+    <div className='App'>
+      <header>
+        <h1 className='title'>TaskBuddy</h1>
+        <p className='tagline'>Your friendly Task Manager</p>
+      </header>
+      <TaskForm addTask = {addTask}/>
+      <TaskList tasks = {tasks}
+      updateTask = {updateTask}
       deleteTask = {deleteTask} />
-      <Progresstracker/>
-      <button>clear all task</button>
+      <ProgressTracker />
+      <button>Clear All Tasks</button>
     </div>
+
   )
 }
