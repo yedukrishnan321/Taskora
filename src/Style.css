@@ -12,10 +12,16 @@ html, body {
   color: #111111;
 }
 
+.first {
+  margin: opx;
+  background-color: #79fcd7;
+}
+
 .App {
   max-width: 720px;
   margin: 0 auto;
   padding: 24px;
+  
 }
 
 header {
@@ -48,6 +54,7 @@ header p {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #ffffff;
+  
 }
 
 #inp input {
@@ -101,15 +108,25 @@ header p {
   opacity: 0.7;
 }
 
-.task-list button {
+.task-list .complete-btn {
   background: none;
   border: 0;
-  color: #047857;
+  background-color: #ffe600;
+  color: #000000;
   cursor: pointer;
   padding: 6px 8px;
   border-radius: 6px;
 }
 
+.task-list .delete-btn {
+  background: none;
+  border: 0;
+  background-color: #ff0000;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
 .progress-tracker {
   margin-top: 16px;
 }
@@ -123,7 +140,7 @@ header p {
 
 .progress {
   height: 100%;
-  background: #16a34a;
+  background: #27d717;
 }
 
 .clear-btn {

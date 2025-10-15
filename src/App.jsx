@@ -29,18 +29,21 @@ export default function App() {
   }
 
   return (
-    <div className='App'>
-      <header>
-        <h1 className='title'>TaskBuddy</h1>
-        <p className='tagline'>Your friendly Task Manager</p>
-      </header>
-      <TaskForm addTask = {addTask}/>
-      <TaskList tasks = {tasks}
-      updateTask = {updateTask}
-      deleteTask = {deleteTask} />
-      <ProgressTracker tasks = {tasks}/>
-      {tasks.length>0 && (<button onClick={clearTasks} className='clear-btn'>Clear All Tasks</button>)}
+    <div className='first'>
+      <div className='App'>
+        <header>
+          <h1 className='title'>TaskBuddy</h1>
+          <p className='tagline'>Your friendly Task Manager</p>
+        </header>
+        <TaskForm addTask = {addTask}/>
+        <TaskList tasks = {tasks}
+        updateTask = {updateTask}
+        deleteTask = {deleteTask} />
+        <ProgressTracker tasks = {tasks}/>
+        {tasks.length>0 && (<button onClick={clearTasks} className='clear-btn'>Clear All Tasks</button>)}
+      </div>
     </div>
+    
 
   )
 }
