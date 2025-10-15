@@ -32,8 +32,8 @@ export default function App() {
     <div className='first'>
       <div className='App'>
         <header>
-          <h1 className='title'>TaskBuddy</h1>
-          <p className='tagline'>Your friendly Task Manager</p>
+          <h1 className='title'>TaskOra</h1>
+          <p className='tagline'>"Organize your day, effortlessly."</p>     {/* Your friendly Task Manager    */}
         </header>
         <TaskForm addTask = {addTask}/>
         <TaskList tasks = {tasks}
@@ -47,7 +47,3 @@ export default function App() {
 
   )
 }
-
-
-
-
