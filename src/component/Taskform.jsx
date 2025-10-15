@@ -17,7 +17,7 @@ export default function Taskform({addTask}) {
 
     return (
         
-        <form onSubmit={handlesubmit} id="task-form">
+        <form onSubmit={handlesubmit} className="task-form">
 
             <div id="ipt">
                 <input type="text" placeholder="Enter Task" value={task} 
